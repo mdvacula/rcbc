@@ -1,0 +1,37 @@
+ a{
+ 	text-decoration: none;
+ }
+
+ a.bOne{
+	background: red;
+	
+	padding: 25px;
+	border: 2px solid red;
+	color:white;
+}
+ a.bOne:hover{
+	background: white;
+	color: red;
+}
+
+ a.bOne:active{
+	border-radius: 5px;
+}
+
+a.bTwo{
+	background: white;
+	border: 2px solid blue;
+	color: blue;
+	padding: 25px;
+	
+}
+
+a.bTwo:hover{
+	background: blue;
+	color: white;
+}
+
+a.bTwo:active{
+	border-radius: 50px;
+	box-shadow: 10px 20px 5px;
+}
