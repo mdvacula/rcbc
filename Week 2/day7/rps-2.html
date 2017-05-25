@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors Part 2</title>
+  </head>
+  <body>
+
+    <div id="game">
+    
+      <h1>ROCK PAPER SCISSORS!!</h1>
+      <p>User Score: <span id="userScoreDoc"> 0</span> </p>
+      <p>Computer Score: <span id="cScoreDoc"> 0</span> </p>
+      <p>Tie: <span id="tGameDoc"> 0</span> </p>
+
+    </div>
+
+    <script type="text/javascript">
+
+      // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+      var options = ["r", "p", "s"];
+      var userScore = 0;
+      var cScore = 0;
+      var tieGame = 0;
+      var uSDoc = document.getElementById("userScoreDoc");
+      var cSDoc = document.getElementById("cScoreDoc");
+      var tGDoc = document.getElementById("tGameDoc");
+      
+
+      // This function is run whenever the user presses a key.
+      document.onkeyup = function(event) {
+
+        // Determines which key was pressed
+        var userGuess = event.key;
+
+        // Alerts the key the user pressed (userGuess).
+        alert(userGuess);
+
+        // Randomly chooses a choice from the options array. This is the Computer's guess.
+        var computerGuess = options[Math.floor(Math.random() * options.length)];
+
+        if (computerGuess == userGuess) {
+          tieGame++;
+        }
+
+        else if ((userGuess == "r") && (computerGuess == "p")) {
+          cScore++;
+        }
+
+        else if ((userGuess == "r") && (computerGuess == "s")) {
+          userScore++;
+        }
+
+        else if ((userGuess == "p") && (computerGuess == "s")) {
+          cScore++;
+        }
+
+        else if ((userGuess == "p") && (computerGuess == "r")) {
+          userScore++;
+        }
+
+        else if ((userGuess == "s") && (computerGuess == "r")) {
+          cScore++;
+        }
+
+        else if ((userGuess == "s") && (computerGuess == "p")) {
+          userScore++;
+        }
+
+        else { alert("Rock, Paper, or Scissors");
+        }
+        // Alerts the Computer's guess.
+        //alert(computerGuess);
+        console.log("Computer: " + cScore);
+        console.log("User: " + userScore);
+        console.log("Tie :" + tieGame);
+        tGDoc.textContent = tieGame.toString();
+        uSDoc.textContent = userScore.toString();
+        cScoreDoc.textContent = cScore.toString();
+        }; 
+
+        //  while(uScore - cScore > 2) %2 !== 0 && > 
+        // while (uScore - )
+
+    </script>
+
+  </body>
+</html>

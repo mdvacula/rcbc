@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car Game</title>
+</head>
+<body>
+    
+      <h1>Car Adventures!</h1>
+      <h2>Type "h" to honk, "d" to drive to work, "w" to drive around the world, or "t" to get a tuneup.
+
+      <h3>See console for car stats.</h3>
+
+      <script type="text/javascript">
+
+	      var car = {
+	        make: "Honda",
+	        model: "Fit",
+	        color: "Blue Raspberry",
+	        mileage: 3000,
+	        isWorking: true,
+
+	        driveToWork: function() {
+
+	          alert("Old Mileage: " + this.mileage);
+
+	          this.mileage = this.mileage + 8;
+
+	          alert("New mileage: " + this.mileage);
+	        },
+
+	        driveAroundWorld: function() {
+
+	          alert("Old Mileage: " + this.mileage);
+
+	          this.mileage = this.mileage + 24000;
+
+	          alert("New Mileage: " + this.mileage);
+	          alert("Car needs a tuneup!");
+
+	          this.isWorking = false;
+	        },
+
+	        getTuneUp: function() {
+	          alert("Car is ready to go!");
+	          this.isWorking = true;
+	        },
+
+	        honk: function() {
+	          alert("Honk! Honk!");
+	         
+	        },
+
+	      };
+
+
+	         function reWriteStats(car) {
+	        	console.log("Car Make: "+ car.make + '\n' + 
+	        		"Car Model: " + car.model +'\n' + 
+	        		"Car Mileage: " + car.mileage +'\n' + 
+	        		"Car Color: " + car.color +'\n'+ 
+	        		"Car Working: " + car.isWorking);
+
+	        }
+
+
+	      document.onkeyup = function(event){
+	      	var audio = new Audio('assets/audio/horn.mp3');
+	      	var anyKey = event.key;
+
+	      	if(anyKey == 'h'){
+	      		car.honk();
+				audio.play();
+
+	      		reWriteStats(car);
+
+	      	}
+
+	      	else if(anyKey == 'd'){
+	      		car.driveToWork();
+	      		reWriteStats(car);
+	      	}
+
+	      	else if(anyKey =='w'){
+	      		car.driveAroundWorld();
+	      		reWriteStats(car);
+	      	}
+
+	      	else if(anyKey =='t'){
+	      		car.getTuneUp();
+	      		reWriteStats(car);
+	      	}
+
+	      	else{
+	      		alert("Your car doesn't do that. Choose h, d, w, or t");
+	      	}
+
+	      }
+
+
+      </script>
+    
+</body>
+</html>

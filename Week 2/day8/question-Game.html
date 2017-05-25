@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question Game</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		
+	var questions = {
+		q1: {
+			"QUESTION": "Today is Monday",
+			"ANSWER": "f"
+		},
+		q2:{
+			"QUESTION": "The sky is Blue",
+			"ANSWER":  "t"
+		},
+		q3:{
+			"QUESTION": "This class is fun",
+			"ANSWER": "t"
+		},
+		q4:{
+			"QUESTION": "I am always hungry",
+			"ANSWER": "t"
+		},
+		q5:{
+			"QUESTION": "I prefer pencil to pen",
+			"ANSWER": "t"
+		},
+		q6:{
+			"QUESTION": "My computer is plugged in",
+			"ANSWER": "t"
+		},
+		q7:{
+			"QUESTION":"I am at least 6ft tall",
+			"ANSWER": "t"
+		},
+	}
+
+	var currentQ = "";
+	var qNum = 0;
+	var quesArray = [];
+	for(var q in questions){
+		quesArray.push(questions[q]);		 
+			
+	}
+
+	document.onkeyup = function(event){
+				var input = event.key;
+				input.toLowerCase;
+				
+				currentQ = quesArray[qNum];
+				console.log(currentQ["QUESTION"]);
+			
+				if(input == currentQ["ANSWER"]){
+					console.log("correct");
+					qNum++;
+
+				}
+
+				else{
+					console.log("incorrect");
+					qNum++;
+				}
+			};
+
+	</script>
+</body>
+</html>
